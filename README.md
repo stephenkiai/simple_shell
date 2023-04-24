@@ -19,26 +19,36 @@ the prompt again. The shell **handles errors** and the **“end of file”** con
 
 The shell implements the following built-in commands:
 
-    **exit: exits the shell**
+    **exit: exits the shell (exit_builtin.c)**
     **env: prints the current environment**
-    **cd: changes the current directory of the process**
-    **setenv: initializes a new environment variable or modifies an existing one**
-    **unsetenv: removes an environment variable**
-    **alias: defines or prints aliases for commands**
+    **cd: changes the current directory of the process (cd_builtin.c)**
+    **setenv: initializ new env var or modifies existing 1 (setenv_builtin.c)**
+    **unsetenv: removes an environment variable (unsetenv_builtin.c)**
+    **alias: defines or prints aliases for commands (alias_builtin.c)**
 
-**Features**
+**Features:**
 
     **Handles command lines with arguments**
     **Handles the PATH**
     **Does not fork if the command does not exist**
     **Handles the commands separator ;**
     **Handles the && and || logical operators**
-    **Implements a custom getline function**
+    **Implements a custom getline function (my_getline.c)**
     **Handles variables replacement, including $? and $$**
     **Handles comments (#)**
-    **Can take a file as a command line argument**
+    **Can take a file as a command line argument (file_input.c)**
 
-Authors
+**Additional Functions:**
 
-    Author 1. </Stephen kiai\>
-    Author 2. </Francis Tawai\> 
+    **panic: displays an error message and exits the program (panic.c)**
+    **run_script: runs a script file (run_script.c)**
+    **parse_line: parses a cmd line and returns array of tokens (parse_line.c)**
+    **launch: launches an external command as a child process (launch.c)**
+    **execute: executes a command line (execute.c)**
+    **prompt: displays the shell prompt (prompt.c)**
+    **read_line: reads a command line from input (read_line.c)**
+
+**Authors**
+
+    Author 1. </Stephen kiai\> -->https://github.com/stephenkiai
+    Author 2. </Francis Tawai\> -->https://github.com/Twayfrancis
