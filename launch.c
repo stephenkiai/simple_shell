@@ -6,7 +6,7 @@
  */
 int launch(char **args)
 {
-	char **environ;
+	char **environ = NULL;
 	pid_t pid;
 	int status;
 
