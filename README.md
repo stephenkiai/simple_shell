@@ -4,7 +4,7 @@ A simple **UNIX command line interpreter** that can handle basic **command execu
 **environment variables**, **built-in commands**, and **logical operators**.
 Usage
 
-**To use the shell, simply run the executable simple_shell**.
+**To use the shell, simply run the executable hsh**.
 
 The shell displays a **prompt** and waits for the user to type a command. A command
 line always ends with a new line. The prompt is displayed again each time a
