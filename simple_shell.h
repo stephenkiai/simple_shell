@@ -19,9 +19,7 @@
 /* Constants */
 #define BUFFER_SIZE 1024
 #define TOKEN_DELIM " \t\r\n\a"
-
-/* Global variables */
-/*static char *current_directory;*/
+#define ARG_MAX 4096
 
 /* Function prototypes */
 void prompt(void);
@@ -38,8 +36,9 @@ int run_script(char *filename);
 int launch(char **args);
 int file_input(char *filename);
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
-int add_alias(char ***alias_list, int *alias_count, char *alias);
-void print_aliases(char **alias_list, int alias_count, char *alias_name);
 
+int echo_builtin(char **args);
+char *getpid_string(void);
+size_t _strlen(char *s);
 
 #endif

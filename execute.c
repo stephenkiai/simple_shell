@@ -10,9 +10,13 @@ int execute(char **args)
 	{
 		return (1);/*if empty just return & prompt again*/
 	}
-	if (strcmp(args[0], "cd") == 0)
+		if (strcmp(args[0], "cd") == 0)
 	{
 		return (cd_builtin(args));/*change dir cmd*/
+	}
+	else if (strcmp(args[0], "echo") == 0)
+	{
+		return (echo_builtin(args));/*handle echo func*/
 	}
 	else if (strcmp(args[0], "exit") == 0)
 	{

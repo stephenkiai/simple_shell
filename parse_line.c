@@ -20,6 +20,10 @@ char **parse_line(char *line)
 	token = strtok(line, TOKEN_DELIM);
 	while (token != NULL)
 	{
+		if (token[0] == '#') /* if the first character is '#' */
+		{
+			break; /* ignore the rest of the line */
+		}
 		tokens[position] = token;
 		position++;
 		if (position >= buffer_size)
