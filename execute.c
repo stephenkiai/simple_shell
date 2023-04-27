@@ -38,10 +38,6 @@ int execute(char **args)
 	{
 		return (run_script(args[1]));/*run script cmd*/
 	}
-	else if (_strcmp(args[0], "&&") == 0)
-	{
-		return (logical(args));/*handle logical operators*/
-	}
 	else
 	{
 		return (launch(args));/*run cmd as external process*/
