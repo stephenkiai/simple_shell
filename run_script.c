@@ -24,7 +24,7 @@ int run_script(char *filename)
 
 		if (args[0] != NULL)
 		{
-			if (strcmp(args[0], "exit") == 0)
+			if (_strcmp(args[0], "exit") == 0)
 			{
 				exit_builtin(args);
 			}

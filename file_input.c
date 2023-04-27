@@ -19,13 +19,13 @@ int file_input(char *filename)
 		return (1);
 	}
 
-	while (getline(&line, &buffer_size, fp) != -1)
+	while (my_getline(&line, &buffer_size, fp) != -1)
 	{
 		char **args = parse_line(line);
 
 		if (args[0] != NULL)
 		{
-			if (strcmp(args[0], "exit") == 0)
+			if (_strcmp(args[0], "exit") == 0)
 			{
 				status = exit_builtin(args);
 

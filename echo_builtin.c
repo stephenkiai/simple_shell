@@ -12,7 +12,7 @@ int echo_builtin(char **args)
 
 	while (args[i] != NULL)
 	{
-		if (strcmp(args[i], "$$") == 0)
+		if (_strcmp(args[i], "$$") == 0)
 		{
 			pid_len = sprintf(pid, "%d", getpid()); /*Converts the PID to a string*/
 			write(STDOUT_FILENO, pid, pid_len); /*Writes the PID to std out*/

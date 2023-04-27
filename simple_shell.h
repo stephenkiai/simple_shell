@@ -20,6 +20,9 @@
 #define BUFFER_SIZE 1024
 #define TOKEN_DELIM " \t\r\n\a"
 #define ARG_MAX 4096
+#define AND 1
+#define OR 2
+
 
 /* Function prototypes */
 void prompt(void);
@@ -39,6 +42,9 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
 
 int echo_builtin(char **args);
 char *getpid_string(void);
-size_t _strlen(char *s);
+size_t _strlen(const char *s);
+int _strcmp(const char *s1, const char *s2);
+int logical(char **args);
+
 
 #endif
