@@ -15,6 +15,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <dirent.h>
+#include <ctype.h>
 
 /* Constants */
 #define BUFFER_SIZE 1024
