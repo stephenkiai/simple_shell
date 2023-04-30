@@ -18,10 +18,10 @@ int execute(char **args)
 	{
 		return (echo_builtin(args));/*handle echo func*/
 	}
-	else if (_strcmp(args[0], "exit") == 0)
+		/*else if (_strcmp(args[0], "exit") == 0)
 	{
-		return (exit_builtin(args));/*exit cmd*/
-	}
+		return (exit_builtin(args));/*exit cmd*\/
+		}*/
 	else if (_strcmp(args[0], "setenv") == 0)
 	{
 		return (setenv_builtin(args));/*set env var cmd*/
