@@ -32,11 +32,11 @@ char **parse_line(char *line);
 int execute(char **args);
 void panic(char *message);
 int cd_builtin(char **args);
-int setenv_builtin(char **args);
-int unsetenv_builtin(char **args);
-int alias_builtin(char **args);
-int exit_builtin(char **args);
-int run_script(char *filename);
+/*int setenv_builtin(char **args);*/
+/*int unsetenv_builtin(char **args);*/
+/*int alias_builtin(char **args);*/
+int exit_status(char **args);
+/*int run_script(char *filename);*/
 int launch(char **args);
 int file_input(char *filename);
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
@@ -46,6 +46,11 @@ char *getpid_string(void);
 size_t _strlen(const char *s);
 int _strcmp(const char *s1, const char *s2);
 int logical(char **args);
+
+int piping(char **args1, char **args2);
+/*int env_builtin(void);*/
+/*char *_getenv(const char *name);*/
+int env_builtin(char **args);
 
 
 #endif

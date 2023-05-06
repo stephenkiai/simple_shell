@@ -6,11 +6,28 @@
  */
 int execute(char **args)
 {
+	char **args1 = args;
+	char **args2 = NULL;
+	int i;
+
 	if (args[0] == NULL)
 	{
 		return (1);/*if empty just return & prompt again*/
 	}
-		if (_strcmp(args[0], "cd") == 0)
+	for (i = 0; args[i] != NULL; i++)  /* Look for pipe symbol */
+	{
+		if (_strcmp(args[i], "|") == 0)
+		{
+			args[i] = NULL;  /* Set null terminator */
+			args2 = &args[i + 1];  /* Get second command */
+			break;
+		}
+	}
+	if (args2 != NULL)
+	{
+		return (piping(args1, args2));  /* Call piping function */
+	}
+	else if (_strcmp(args[0], "cd") == 0)
 	{
 		return (cd_builtin(args));/*change dir cmd*/
 	}
@@ -18,21 +35,9 @@ int execute(char **args)
 	{
 		return (echo_builtin(args));/*handle echo func*/
 	}
-	else if (_strcmp(args[0], "setenv") == 0)
+	else if (strcmp(args[0], "env") == 0)
 	{
-		return (setenv_builtin(args));/*set env var cmd*/
-	}
-	else if (_strcmp(args[0], "unsetenv") == 0)
-	{
-		return (unsetenv_builtin(args));/*unset env var cmd*/
-	}
-	else if (_strcmp(args[0], "alias") == 0)
-	{
-		return (alias_builtin(args));/*alias cmd*/
-	}
-	else if (_strcmp(args[0], "run_script") == 0)
-	{
-		return (run_script(args[1]));/*run script cmd*/
+		return (env_builtin(args));
 	}
 	else
 	{

@@ -27,7 +27,7 @@ int file_input(char *filename)
 		{
 			if (_strcmp(args[0], "exit") == 0)
 			{
-				status = exit_builtin(args);
+				status = exit_status(args);
 
 			}
 			else

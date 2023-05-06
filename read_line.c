@@ -24,6 +24,6 @@ char *read_line(void)
 			panic("read_line failed");
 		}
 	}
-	/* return the line read from  stdin*/
+	/* return /the line read from  stdin*/
 	return (line);
 }

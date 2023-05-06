@@ -7,10 +7,12 @@
 int launch(char **args)
 {
 	char **environ = NULL;
-	pid_t pid;
+	pid_t pid = fork();
 	int status;
 
-	pid = fork();
+	if (_strcmp(args[0], "exit") == 0)
+		return (exit_status(args));
+
 	if (pid == 0)
 	{    /*child process*/
 		char *path = getenv("PATH");   /*search for cmd in PATH*/
@@ -40,10 +42,8 @@ int launch(char **args)
 		perror("fork");/*fork error*/
 	}
 	else
-	{
 		do {    /*parent process*/
 			waitpid(pid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
-	}
 	return (1);
 }
